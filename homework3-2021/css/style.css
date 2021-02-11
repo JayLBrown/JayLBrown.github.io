@@ -4,23 +4,14 @@ You can not change ANYTHING inside the
 brackets or add additional rules
 */
 
-Put your selector(s) here {
+.item2, .item_b {
 	grid-column: 3/4;
 }
 
-Put your selector(s) here {
+.item3, .item_d {
 	grid-column: 2/3;
 }
 
-Put your selector(s) here {
+.item1, .item4 {
 	grid-column: 1/2;
-}
-
-Put your selector(s) here {
-	grid-column: 3/4;
-}
-
-Put your selector(s) here{
-	grid-column: 3/4;
-	grid-row: 3/4;
 }
