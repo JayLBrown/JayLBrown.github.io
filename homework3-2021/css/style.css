@@ -15,3 +15,9 @@ brackets or add additional rules
 .item1, .item4 {
 	grid-column: 1/2;
 }
+
+
+.item5, .item_a {
+	grid-column: 3/4;
+	grid-row: 3/4;
+}
