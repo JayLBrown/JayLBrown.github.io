@@ -61,7 +61,7 @@ a{
 
 /*Req 5*/
 /*Add selector and rule here*/
-*{
+*:focus{
   border: 3px dashed #417243;
 }
 
