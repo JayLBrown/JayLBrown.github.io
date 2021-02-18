@@ -84,7 +84,6 @@ td{
 /*Req 6c*/
 .rowhead{
   border-width: 2px solid #000;
-
 }
 
 /*Req 6d*/
@@ -106,9 +105,12 @@ tr:hover{
 table{
     border: 2px solid #000;
     border-radius: 10px;
+    border-collapse: separate;
 }
 
-thead tr:first-child th:first-child{}
+thead tr:first-child th:first-child{
+  border-radius: 10px;
+}
 
 /*Add selectors and rules here*/
 
