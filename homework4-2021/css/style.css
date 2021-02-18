@@ -68,13 +68,19 @@ a{
 
 /*Req 6a*/
 td{
-  
+  text-align: center;
+  border-top: 2px solid #000000;
+  padding: 10px;
 }
 
 /*Req 6b*/
 .colhead{
   color: #FFFFFF;
-
+  min-width: 125px;
+  padding: 10px;
+  text-align: center;
+  background-color: #7e0820;
+  vertical-align: middle;
 }
 /*Req 6c*/
 .rowhead{
