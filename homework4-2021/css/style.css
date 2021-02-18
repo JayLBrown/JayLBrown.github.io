@@ -65,11 +65,10 @@ a{
   border: 3px dashed #417243;
 }
 
-
 /*Req 6a*/
 td{
   text-align: center;
-  border-top: 2px solid #000000;
+  border-top: 2px solid #000;
   padding: 10px;
 }
 
@@ -84,17 +83,29 @@ td{
 }
 /*Req 6c*/
 .rowhead{
+  border-width: 2px solid #000;
 
 }
 
 /*Req 6d*/
-/*Req 6e*/
-/*Req 6f*/
+tr:nth-child(odd) {
+  background-color: transparent;
+}
 
+  /*Req 6e*/
+tr:nth-child(even){
+  background-color: #D1D1D1;
+}
+
+/*Req 6f*/
+tr:hover{
+  background: rgba(126, 8, 32, 0.25);
+}
 
 /*Req 7*/
 table{
-    border: 2px solid #000000;
+    border: 2px solid #000;
+    border-radius: 10px;
 }
 
 thead tr:first-child th:first-child{}
@@ -105,8 +116,12 @@ thead tr:first-child th:first-child{}
 /*Req 8*/
 footer{
   width:100%;
-  background:#000000;
+  background:#000;
   text-align:center;
-  color: #FFFFFF;
+  color: #FFF;
+  min-height: 75px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }
 
