@@ -1,0 +1,108 @@
+/*DO NOT MODIFY THIS FILE*/
+
+/*DO NOT MODIFY THIS FILE*/
+
+/*DO NOT MODIFY THIS FILE*/
+h1{
+  font-size: 2em;
+  text-align: center;
+  line-height: 2;
+}
+
+h2{
+  font-size: 1.5em;
+  text-align: center;
+  padding: 5px;
+}
+
+p {
+  padding: 0 30px;
+}
+
+a.skip{
+  background: white;
+  left: 0;
+  padding: 6px;
+  position: absolute;
+  top: -40px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+}
+
+a.skip:focus{
+  top:20px;
+  color: black;
+  text-decoration-style: solid;
+}
+
+*:focus{
+  border: 2px solid black;
+}
+
+footer{
+  background-color: black;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+.package > ul{
+  list-style: none;
+  padding: 0;
+}
+
+.package > ul li {
+  width: 90%;
+  margin: 20px auto;
+}
+
+.package button{
+  width: 90%;
+  height: 40px;
+  border: 0;
+  margin-left: 12px;
+  border-radius: 7px;
+  background: #288080;
+  color: white;
+  font-size: 1em;
+}
+
+.package h3{
+  font-size: 4em;
+  color: white;
+  text-align: center;
+}
+
+.big_card{
+  -webkit-transform: initial;
+          transform: initial;
+}
+
+.nav_links{
+  width:100%;
+}
+
+.nav_item a{
+  color: black;
+  text-decoration: none;
+}
+
+.nav_item a:hover, a:focus{
+  color: #50C7C7;
+  text-decoration: underline;
+  -webkit-text-decoration-style: dotted;
+          text-decoration-style: dotted;
+}
+
+
+@media screen and (min-width: 850px){
+  .big_card{
+    -webkit-transform: scaleX(1.12);
+            transform: scaleX(1.12);
+  }
+
+  .nav_item a{
+    padding: 10px;
+  }
+}

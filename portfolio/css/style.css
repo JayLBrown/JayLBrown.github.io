@@ -1,0 +1,69 @@
+
+html,
+body,
+header,
+#intro-section {
+    height: 100%;
+}
+
+
+
+
+@media (max-width: 740px) {
+    html,
+    body,
+    header,
+    #intro-section {
+        height: 100%;
+    }
+}
+
+.top-nav-collapse, .page-footer {
+    background-color: #fff !important;
+}
+.navbar:not(.top-nav-collapse) {
+    background: transparent !important;
+}
+@media (max-width: 991px) {
+    .navbar:not(.top-nav-collapse) {
+        background: #fff !important;
+    }
+}
+
+.aqua-gradient {
+    height: 300px;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(233, 242, 233, 0.9878326330532213) 0%, rgba(0, 212, 255, 1) 20%, rgb(15, 4, 113)93%);
+  }
+  
+  .image {
+    margin-top: -150px;
+  }
+  
+  .avatar-container {
+    width: 90%;
+    border: 1px solid #eee;
+  }
+
+
+  .about-content {
+    margin-top: 70px;
+    padding: 90px 0px;
+    text-align: center;
+  }
+
+  /* p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+} */
+
+body {
+    color: #777777;
+    font-family: "Poppins", serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.625em;
+    position: relative;
+}
