@@ -15,13 +15,17 @@
     <!-- Linearicons-->
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 
+    <!--favcons-->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <script src="https://kit.fontawesome.com/6dc2e6e9ad.js" crossorigin="anonymous"></script>
+
     <title>Jay Brown</title>
   </head>
   <header class="header_area">
 
 <!--HEADER/NAVIGATION-->
-      <div class="container" style="display: block;">
-          <nav class="navbar navbar-expand-sm navbar-light scrolling-navbar">
+    <div class="container" style="display: block;">
+        <nav class="navbar navbar-expand-sm navbar-light scrolling-navbar">
             <a href="/" class ="navbar-brand text-dark fw-bold fs-4">J. Brown</a>
             <button
             class="navbar-toggler"
@@ -33,7 +37,7 @@
             aria_expanded="false"
             aria-lable="Toggle navigation"
             >
-                <span class="navbar-toggler-icon"></span>
+                <span class="lnr lnr-menu"></span>
             </button>
             <div class="collapse navbar-collapse" id="toggleMobileMenu">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-left smooth-scroll">
@@ -61,19 +65,24 @@
         <div class="avatar-container text-center mx-auto ">
             <div class="card-up aqua-gradient"></div>
             <!-- Avatar -->
-            <div class="avatar mx-auto white">
-              <img src="images/linkedin_resized.png" class="rounded-circle img-responsive bg-white p-3 image" alt="jay brown avatar">
+            <div class="avatar mx-auto white" style="height: -100px;">
+              <img src="images/linkedin_resized.png" class="rounded-circle img-responsive bg-white p-3 image" alt="Jay Brown avatar">
             </div>
             <!-- Content -->
             <div class="card-body">
               <!-- Name -->
-              <!-- <h5 class="card-title font-weight-bold">I am</h5> -->
               <h4 class="card-title font-weight-bold">Jay Brown</h4>
               <blockquote class="generic-blockquote">Programmer, poet, figuring the rest out</blockquote> 
               <hr>
               <!-- Quotation -->
-              <p><i class="fas fa-quote-left"></i> (social media icons)
-              </p>
+              <div class="align-items-center">
+                <div class="social-links">
+                   <a href="https://github.com/JayLBrown" class="text-dark me-2"><i class="fab fa-github"></i></a>
+                   <!-- <a href="#" class="text-dark me-2"><i class="fab fa-twitter"></i></a>
+                   <a href="#" class="text-dark me-2"><i class="fab fa-instagram"></i></a> -->
+                   <a href="https://www.linkedin.com/in/jaylbrown/" class="text-dark me-2"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
             </div>
           </div>
     </section>
@@ -89,16 +98,15 @@
                 <br>
                 <blockquote class="generic-blockquote">
                     <p class="fz-16">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has 
-                        been the industry's standard dummy text ever since the 1500s, 
-                        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        Experienced Technology Fellow with a demonstrated history of working in the 
+                        higher education industry. 
                     </p>
                 </blockquote>
                 <blockquote class="generic-blockquote">
                     <p class="fz-16">
-                        It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-                        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        Skilled in Data Analysis, Mentoring, Python, Java, and Android Development. 
+                        Strong information technology professional pursing a Bachelor of Applied Science - 
+                        BS focused in Information Science from the University of Michigan - School of Information. 
                     </p>
                 </blockquote>
             </div>
@@ -107,59 +115,6 @@
     <div class="container">
         <hr>
     </div>
-    <!--Background End-->
-
-    <!--Interests Begin-->
-    <!-- <section class="services section-gap" id="interests">
-        <div class="container-md py-2">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="section-title text-center">
-                        <h1 class="mb-10">Areas of Interest</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="service-item shadow-sm p-4 rounded bg-white">
-                        <div class="icon my-3 text-danger fs-2">
-                            <span class="lnr lnr-chart-bars"></span>
-                        </div>
-                        <h3 class="fs-5 py-2">Analytics</h3>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="service-item shadow-sm p-4 rounded bg-white">
-                        <div class="icon my-3 text-danger fs-2">
-                            <i class="lnr lnr-book"></i>
-                        </div>
-                        <h3 class="fs-5 py-2">Ethics</h3>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="service-item shadow-sm p-4 rounded bg-white">
-                        <div class="icon my-3 text-danger fs-2">
-                            <i class="lnr lnr-cog"></i>
-                        </div>
-                        <h3 class="fs-5 py-2">NLP</h3>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                    
-                </div>
-            </div>
-            <hr>
-        </div>
-    </section> -->
-    <!--Interests End-->
-
-    <!--Projects Begin-->
-
-
-
-
-
 
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -171,7 +126,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
     -->
-</header>
+
 <body>
     <!--Interests Begin-->
     <section class="services section-gap ms-sm mb-2 mb-lg-0" id="interests">
@@ -239,7 +194,7 @@
                 <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
                     <!--Featured image-->
                     <div class="view overlay rounded z-depth-1">
-                        <img src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg" class="img-fluid" alt="Sample project image">
+                        <img src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg" class="img-fluid rounded" alt="Sample project image">
                         <a>
                             <div class="mask rgba-white-slight"></div>
                         </a>
@@ -259,7 +214,7 @@
                 <div class="col-lg-4 col-md-6 mb-md-0 mb-4">
                     <!--Featured image-->
                     <div class="view overlay rounded z-depth-1">
-                        <img src="https://mdbootstrap.com/img/Photos/Others/project4.jpg" class="img-fluid" alt="Sample project image">
+                        <img src="https://mdbootstrap.com/img/Photos/Others/project4.jpg" class="img-fluid rounded" alt="Sample project image">
                         <a>
                             <div class="mask rgba-white-slight"></div>
                         </a>
@@ -279,7 +234,7 @@
                 <div class="col-lg-4 col-md-6">
                     <!--Featured image-->
                     <div class="view overlay rounded z-depth-1">
-                        <img src="https://mdbootstrap.com/img/Photos/Others/images/88.jpg" class="img-fluid" alt="Sample project image">
+                        <img src="https://mdbootstrap.com/img/Photos/Others/images/88.jpg" class="img-fluid rounded" alt="Sample project image" >
                         <a>
                             <div class="mask rgba-white-slight"></div>
                         </a>
@@ -300,30 +255,22 @@
 
         </div>
         <!-- Container -->
-
     </section>
-
-
 
     <!--Recent Projects End-->
 
-
-
-
-
 </body>
-
-
-
-
 <!--Footer Start-->
-<footer class="footer-area section-gap text-center">
-        <div class = "single-footer-widget">
-            <br>
-            <br>
-            <p class = "footer-text">
-                Copyright © Jay Brown 
-            </p>
+<footer class="footer border-top py-4">
+        <div class = "container-lg">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class = "footer-text text-center">
+                        Copyright © Jay Brown 
+                    </p>
+
+                </div>
+            </div>
         </div>
     </div>
 </footer>
