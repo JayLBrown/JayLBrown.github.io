@@ -70,6 +70,13 @@ document.querySelector("#orig").addEventListener("click", function() {
 	video.classList.remove("oldSchool");
 });
 
+// document.querySelectorAll(",#orig #vintage").addEventListener("click", function() {
+// 	console.log("Changing CSS style");
+// 	video.classList.add("oldSchool");
+// });
+
+
+
 // var i = setInterval(function() {
 // 	if(video.readyState > 0) {
 // 		var minutes = parseInt(video.duration / 60, 10);
