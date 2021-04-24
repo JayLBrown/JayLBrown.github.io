@@ -1,10 +1,75 @@
-
 html,
 body,
 header,
 #intro-section {
     height: 100%;
 }
+ body {
+  color: #000;
+  background-color: #fbfbfb;
+  font-family: Arial,verdana,sans-serif;
+  letter-spacing: 0px;
+  font-family: "proxima-nova";
+  font-size: 14px;
+  line-height: 1.6em;
+  letter-spacing: .5px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Poppins", sans-serif;
+  color: #000;
+  line-height: 1.2em !important;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-weight: 600;
+}
+
+.top-nav-collapse, .page-footer {
+  background-color: #fff !important;
+}
+
+.navbar:not(.top-nav-collapse) {
+  background: transparent !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #000;
+}
+
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
+  color: #8490ff;
+}
+
+.fa-linkedin-in {
+  font-size: 30px;
+  width: auto;
+  text-align: center;
+  text-decoration: none;
+}
+
+.fa-github {
+  font-size: 30px;
+  width: auto;
+  text-align: center;
+  text-decoration: none;
+}
+
+.fa:hover {
+  opacity: 0.7;
+} 
+
+.breadcrumb-item.active {
+  color: #fff;
+}
+
+/* .about-content {
+  margin-top: 70px;
+  margin-bottom: 70px;
+  padding: 90px 0px;
+  text-align: center;
+} */
 
 @media (max-width: 740px) {
     html,
@@ -13,66 +78,23 @@ header,
     #intro-section {
         height: 100%;
     }
-}
-.top-nav-collapse, .page-footer {
-    background-color: #fff !important;
-}
-.navbar:not(.top-nav-collapse) {
-    background: transparent !important;
-}
-
-/* .aqua-gradient {
-    height: 300px;
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(233, 242, 233, 0.9878326330532213) 0%, rgba(0, 212, 255, 1) 20%, rgb(15, 4, 113)93%);
-  }
-  
-  .image {
-    margin-top: -150px;
-  }
-  
-  .avatar-container {
-    width: 90%;
-    border: 1px solid #eee;
-  } */
-
-  .about-content {
-    margin-top: 70px;
-    padding: 90px 0px;
-    text-align: center;
-  }
-
-  /* p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-} */
-
-body {
-    color: #777777;
-    font-family: "Poppins", serif;
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 1.625em;
-    position: relative;
+    .avatar-container {
+      width: 100%;
+      border: 1px solid #eee;
+    }
+    .aqua-gradient {
+      height: 300px;
+      background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(233, 242, 233, 0.9878326330532213) 0%, rgba(0, 212, 255, 1) 20%, rgb(15, 4, 113)93%);
+    }
+    .image {
+      margin-top: -150px;
+    }
 }
 
-
-.sqs-row {
-  width: auto !important;
-}
-
-.sqs-layout > .sqs-row {
-  margin-left: -17px;
-  margin-right: -17px;
-}
-
-@media (min-width: 768px)
+@media (min-width: 768px) {
 .container {
     max-width: 720px;
 }
-
 
 @media (max-width: 991px) {
   .navbar:not(.top-nav-collapse) {
@@ -80,7 +102,7 @@ body {
   }
 
   .aqua-gradient {
-      height: 200px;
+      height: 250px;
       background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(233, 242, 233, 0.9878326330532213) 0%, rgba(0, 212, 255, 1) 20%, rgb(15, 4, 113)93%);
     }
     
@@ -93,35 +115,35 @@ body {
     }
 }
 
-@media(max-width:1000px)  {
-
+@media (min-width:1000px)  {
   .navbar:not(.top-nav-collapse) {
     background: #fff !important;
-}
-
+  }
   .navbar-collapse {
       overflow-x: visible !important;
   }
-
   .navbar-collapse.in {
     overflow-y: auto !important;
   }
-
   .collapse.in {
     display: block !important;
   }
+  .avatar-container {
+    width: 100%;
+    border: 1px solid #eee;
+  }
+  .image {
+    margin-top: -100px;
+  }
+  .aqua-gradient {
+    height: 300px;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(233, 242, 233, 0.9878326330532213) 0%, rgba(0, 212, 255, 1) 20%, rgb(15, 4, 113)93%);
+  }
+  .container {
+    margin: 0 auto;
+    max-width: 1224px;
+  }
+}
 
 }
 
-body {
-  color: #333;
-  background-color: #fbfbfb;
-  font-family: Arial,verdana,sans-serif;
-  letter-spacing: 0px;
-  font-family: "proxima-nova";
-  font-size: 14px;
-  line-height: 1.6em;
-  letter-spacing: .5px;
-  font-weight: 400;
-  font-style: normal;
-}

@@ -1,0 +1,1000 @@
+Skip to content
+Search...
+Log in
+Create account
+
+459
+
+87
+
+576
+
+A Modern CSS Reset
+#css
+hankchizljaw profile image
+Andy Bell
+Oct 1, 2019 Originally published at hankchizljaw.com on Sep 30, 2019 ・5 min read
+I think about and enjoy very boring CSS stuff—probably much more than I should do, to be honest. One thing that I’ve probably spent too much time thinking about over the years, is CSS resets.
+
+In this modern era of web development, we don’t really need a heavy-handed reset, or even a reset at all, because CSS browser compatibility issues are much less likely than they were in the old IE 6 days. That era was when resets such as normalize.css came about and saved us all heaps of hell. Those days are gone now and we can trust our browsers to behave more, so I think resets like that are probably mostly redundant.
+
+A reset of sensible defaults
+I still like to reset stuff, so I’ve been slowly and continually tinkering with a reset myself over the years in an obsessive code golf manner. I’ll explain what’s in there and why, but before I do that, here it is in its entirety:
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+Breaking it down
+We start with box-sizing. I just flat out reset all elements and pseudo-elements to use box-sizing: border-box.
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+Some people think that pseudo-elements should inherit box sizing, but I think that’s silly. If you want to use a different box-sizing value, set it explicitly—at least that’s what I do, anyway. I wrote about box-sizing more over on CSS From Scratch.
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+After box-sizing, I do a blanket reset of margin and padding, where it gets set by the browser styles. This is all pretty self-explanatory, so I won’t get into it too much.
+
+I will mention the situation with lists, though. I select only lists that do have a class attribute because if a plain ol’ <ul> or <ol> gets used, I want it to look like a list. A lot of resets, including my previous ones, aggressively remove that.
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+Next up: body styles. I keep this really simple. It’s useful for the <body> to fill the viewport, even when empty, so I do that by setting the min-height to 100vh. I also like smooth anchor scrolling, so I set scroll-behavior: smooth, too.
+
+I only set two text styles. I set the line-height to be 1.5 because the default 1.2 just isn’t big enough to have accessible, readable text. I also set text-rendering to optimizeSpeed. Using optimizeLegibility makes your text look nicer, but can have serious performance issues such as 30 second loading delays, so I try to avoid that now. I do sometimes add it to sections of microcopy though.
+ul[class],
+ol[class] {
+  list-style: none;
+}
+Just like the margin and padding rules, I only reset list-style where a list element has a class attribute.
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+For links without a class attribute, I set text-decoration-skip-ink: auto so that the underline renders in a much more readable fashion. This could be set on links globally, but it’s caused one or two conflicts in the past for me, so I keep it like this.
+img {
+  max-width: 100%;
+  display: block;
+}
+Good ol’ fluid image styles come next. I set images to be a block element because frankly, life is too short for that weird gap you get at the bottom, and realistically, images—especially with work I do—tend to behave like blocks.
+article > * + * {
+  margin-top: 1em;
+}
+I really like this CSS trick and I’ve finally been brave enough to add it to the reset. The lobotomised owl selector targets direct descendants of an article and adds 1em of top margin to them. This gives a solid rhythm to flow content. I actually use a .flow utility in every project now. You can read more about it on 24 Ways. In fact, I reckon it’s my most used CSS these days.
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+Another thing I’ve finally been brave enough to set as default is font: inherit on input elements, which as a shorthand, does exactly what it says on the tin. No more tiny (mono, in some cases) text!
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+Last, and by no means least, is a single @media query that resets animations, transitions and scroll behaviour if the user prefers reduced motion. I like this in the reset, with specificity trumping !important selectors, because most likely now, if a user doesn’t want motion, they won’t get it, regardless of the CSS that follows this reset.
+
+ℹ️ Update: Thanks to @atomiks, this has been updated so it doesn’t break JavaScript events watching for animationend and transitionend.
+
+Wrapping up
+That’s it, a very tiny reset that makes my life a lot easier. If you like it, you can use it yourself, too! You can find it on GitHub or NPM.
+
+Discussion (52)
+Subscribe
+pic
+Add to the discussion
+ 
+ignore_you profile image
+Alex
+•
+Oct 8 '19
+
+Well, this list is soooo arguable.
+At first, AFAIK adding list-style: none resets accessibility of lists, so it's better to apply transparent image to list-style-image.
+Article with owl selector — really? I mean, if it is a reset for blogs, this thing should be boilerplated, but for all the possible cases do we all really need it? 'Cause article tag is used not just to markup text articles in magazines :)
+And of course images shouldn't be blocks by default (you are proposing reset, aren't you?). If you don't like image's gap at the bottom, just add vertical-align: middle — and the 'problem' is solved.
+
+
+6
+ likes
+Reply
+ 
+jamesthomson profile image
+James Thomson
+•
+Oct 9 '19
+
+I actually tend to agree with this. A reset should align browser defaults, whereas what’s been proposed is more of a boilerplate. A reset should be able to be used in any project without drastically changing things, but rules like the owl selector, image block, reduced motion query does exactly that. While these may be great for some projects, I wouldn’t be comfortable blindly dropping this in as a reset.
+
+
+3
+ likes
+Reply
+ 
+hankchizljaw profile image
+Andy Bell
+•
+Oct 8 '19
+
+I'd properly respond but I actually can't be arsed. Maybe actually reading the post again, but you do you 👍
+
+
+2
+ likes
+Reply
+ 
+craigmorrison profile image
+Craig Morrison
+•
+Oct 13 '19
+
+Sorry but where do you answer this in the post? You talk about how the list looks but removing the semantics is completely a different thing and I can't think why you'd want to use a list element without it carrying those semantics.
+
+Anyway, thanks for the post, it's made me revisit what is really needed again.
+
+
+5
+ likes
+Reply
+ 
+larsklopstra profile image
+Lars Klopstra ⚡
+•
+Oct 5 '19
+
+How about adding an overflow-x: hidden to the body?
+
+
+4
+ likes
+Reply
+ 
+hankchizljaw profile image
+Andy Bell
+•
+Oct 5 '19
+
+I'm up for that. Great idea!
+
+
+3
+ likes
+Reply
+ 
+hellojere profile image
+Jere Salonen
+•
+Oct 7 '19
+
+Not a great idea! This'll kill position: sticky for all the child elements.
+
+
+7
+ likes
+Thread
+hankchizljaw profile image
+Andy Bell
+•
+Oct 7 '19
+
+Oooh good point!
+
+
+1
+ like
+Thread
+chriscoyier profile image
+Chris Coyier
+•
+Oct 8 '19
+
+The mental leap for that is a tough one for me. Why isn't my position: sticky; working?! Oh, because some parent element has hidden X overflow? 🤯
+
+
+7
+ likes
+Thread
+hankchizljaw profile image
+Andy Bell
+•
+Oct 8 '19
+
+Yup. I completely forgot about that bugger. Definitely not helpful to be set as a global style in that context.
+
+
+1
+ like
+Thread
+igcorreia profile image
+Ignácio Correia
+•
+Oct 8 '19
+
+Finally I figure it out too :)
+
+
+1
+ like
+Thread
+cullylarson profile image
+Cully Larson
+•
+Dec 27 '19
+
+Apparently if you set the height of the element you're overflow hidden'ing on, sticky will work. So something like:
+#container {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100vh; /* need to set this for child elements to be able to use display:sticky (c.f. https://github.com/w3c/csswg-drafts/issues/865) */
+}
+
+2
+ likes
+Reply
+ 
+lewiscowles1986 profile image
+Lewis Cowles
+•
+Oct 8 '19
+
+Just be careful with CSS and contain within something else overflow-x: hidden; as needed. Generic reset rules about body overflow just paper over cracks
+
+
+3
+ likes
+Reply
+ 
+cullylarson profile image
+Cully Larson
+•
+Dec 27 '19
+
+What do you think about adding something like this:
+p:first-child, h1:first-child, h2:first-child, ... {
+  margin-top: 0;
+}
+
+p:last-child, h1:last-child, h2:last-child, ... {
+  margin-bottom: 0;
+}
+or even:
+*:first-child {
+  margin-top: 0;
+}
+
+*:last-child {
+  margin-bottom: 0;
+}
+I seem to always be removing margin top on the first item and margin bottom on the last item, since it pushes a container out too far or something.
+
+
+3
+ likes
+Reply
+ 
+tups profile image
+Damien Tupinier
+•
+Oct 27 '19
+
+Hello,
+
+I just read your article, and there is one point that bothers me in this CSS reset.
+
+For example, your idea of removing "list-style" and "padding" on "ul [class]" has too much of a too powerful selector.
+
+Imagine that I want to change the style of UL with a "class", I will logically use ".my-list", but your selector will be more powerful. And I could not change neither the "padding" nor the "list-style", it is absolutely necessary to put more selector:
+
+
+
+Your CSS reset is therefore not compatible with the BEM method for example. en.bem.info/methodology/css/
+
+I would tend to let the developer choose if he needs to delete or not the style on with a "class"
+
+
+4
+ likes
+Reply
+ 
+maxart2501 profile image
+Massimo Artizzu
+•
+Oct 4 '19
+
+Very nice, Andy. I'll consider using it from now on 👍
+
+I was wondering about the box-sizing setting selector: isn't *::before equivalent to just ::before?
+I'm asking because I've seen that everywhere with the asterisk, so I wonder if there are any differences I'm missing out.
+
+
+2
+ likes
+Reply
+ 
+hankchizljaw profile image
+Andy Bell
+•
+Oct 4 '19
+
+Both will work fine! It's just a stylistic choice, really.
+
+
+3
+ likes
+Reply
+ 
+kyleoliveiro profile image
+Kyle Oliveiro
+•
+Oct 8 '19
+
+I'm not sure if it's a good idea to reset styles for only ul and ol elements that have a class. I'm guessing the rationale behind this decision was to remove default styling for elements that are semantically lists.
+
+But consider the following case where the user is expecting default styling on a ul element, plus an added purple style for the text:
+<ul class="text--purple">
+  <li>Apple</li>
+  <li>Orange</li>
+  <li>Banana</li>
+</ul>
+In this case, the default margin and padding would be removed and AFAIK there isn't a way to restore the default UA styling.
+
+
+2
+ likes
+Reply
+ 
+hankchizljaw profile image
+Andy Bell
+•
+Oct 8 '19
+
+Yeh that's valid, but I've found the styles as above more useful. It's probably better for you to create a fork in this instance.
+
+
+1
+ like
+Reply
+ 
+equinusocio profile image
+Mattia Astorino
+•
+Oct 3 '19 • Edited on Oct 3
+
+Does this:
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-play-state: paused !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+can just be like this?
+* {
+  animation: unset | revert | initial !important;
+  transition: unset | revert | initial !important;
+  scroll-behavior: unset | revert | initial !important;
+}
+
+1
+ like
+Reply
+ 
+hankchizljaw profile image
+Andy Bell
+•
+Oct 3 '19
+
+It's in the media query for if someone prefers reduced motion. Your code will just disable animations globally.
+
+
+2
+ likes
+Reply
+ 
+equinusocio profile image
+Mattia Astorino
+•
+Oct 3 '19 • Edited on Oct 3
+
+Yes sorry, i forgot to add the @media query. By point was about the values (unset, revert, initial). But i think forcing specific value is more stronger, while my proposed values are not predictable.
+
+
+1
+ like
+Thread
+hankchizljaw profile image
+Andy Bell
+•
+Oct 3 '19
+
+Yeh, sure you can do that!
+
+
+1
+ like
+Reply
+ 
+sandstedt profile image
+Jonas Sandstedt
+•
+Oct 5 '19
+
+Thanks for a great reset! Really liked the smart list styling.
+
+But can't agree with the prefers reduced motion part. This option is for people who wants reduced motion. Not no motion at all. A lot of small animation can be critical to understanding the flow or function, without triggering motion sickness or nausea.
+
+Also opacity and color changes usually works just fine to.
+
+Well I could rant over this for hours, but I guess you get my point 😄. Devs always need to add this media query on problematic animations (also in JS code), but that must be up to the author of the code to decide.
+
+
+1
+ like
+Reply
+ 
+hankchizljaw profile image
+Andy Bell
+•
+Oct 5 '19
+
+I disagree. The great thing about it being OS is that you can fork it and remove the bits you don't like 🎉
+
+
+2
+ likes
+Reply
+ 
+sandstedt profile image
+Jonas Sandstedt
+•
+Oct 5 '19
+
+Absolutely. Just know how copy paste friendly this community is, many developers will just take it and don't think what it does. Just wanted to make sure people know what it does.
+
+But will definitely try this on my next project. Thanks!
+
+
+2
+ likes
+Reply
+ 
+michaelherold profile image
+Michael Herold
+•
+Oct 8 '19
+
+I'm curious whether the text-rendering: optimizeLegibility; avoidance is still applicable. That article is from 7 years ago, which is an eternity in terms of phone age. It'd be nice to see a set of updated measurements!
+
+
+1
+ like
+Reply
+ 
+mikeriley131 profile image
+Mike Riley
+•
+Oct 8 '19 • Edited on Oct 8
+
+Pretty good stuff. One question for you. In the anchor element section you mention "This could be set on links globally, but it’s caused one or two conflicts in the past for me, so I keep it like this." I'm curious what those conflicts were.
+
+
+1
+ like
+Reply
+ 
+nenadra profile image
+nenadra
+•
+Oct 2 '19
+
+Great list!
+
+I always add:
+font-size: 0
+to the body element, to disable the gap when you use display: inline-block
+
+
+2
+ likes
+Reply
+ 
+hankchizljaw profile image
+Andy Bell
+•
+Oct 2 '19
+
+I would only recommend doing hacks like that on the element itself, rather than globally.
+
+
+4
+ likes
+Reply
+ 
+nenadra profile image
+nenadra
+•
+Oct 2 '19
+
+I use inline-block pretty often. It’s a necessity for me.
+But not everybody has the same approach. Thanks for your post again. Very helpful
+
+
+2
+ likes
+Reply
+ 
+westbrook profile image
+Westbrook Johnson
+•
+Oct 3 '19
+
+Interesting technique. Does that no longer have SEO issues? Maybe the crawler is smart enough to go further into the page, but I remember that being a solid anti-pattern a while back.
+
+
+2
+ likes
+Reply
+ 
+nenadra profile image
+nenadra
+•
+Oct 3 '19
+
+I don't think so, but should be tested :)
+My opinion is that if you put "font-size: 0" to the
+
+element, then you don't plan to have text directly in the body element. The text should be inside of a
+,
+or other (all with a visible font-size). Nothing is concealed, so it should be crawled normally.
+
+
+1
+ like
+Reply
+ 
+chaofix profile image
+Itzik Pop
+•
+Oct 3 '19
+
+Amazing work !!! well done
+
+
+3
+ likes
+Reply
+ 
+sagar profile image
+Sagar
+•
+Oct 8 '19
+
+You've missed the h5 tag.
+
+
+3
+ likes
+Reply
+ 
+nemethricsi profile image
+Richard
+•
+Dec 20 '20
+
+how about h6? :D
+
+
+Like
+Reply
+ 
+furrer_webdev profile image
+Ryan Furrer
+•
+Oct 2 '19
+
+Thanks for this, Andy! I've been using something similar that I have created, however, it's definitely not as robust. I'll definitely be borrowing some of this!
+
+
+2
+ likes
+Reply
+ 
+bhenbe profile image
+Benoît HENRY
+•
+May 17 '20
+
+Adding height: auto to image can be useful with svg images. I had some issues with brand logo and illustrations in content.
+
+
+1
+ like
+Reply
+ 
+kathryngrayson profile image
+Kathryn Grayson Nanz
+•
+Oct 3 '19
+
+This was a very cool read - the "lobotomized owl" in particular was new to me and definitely something I'll incorporate now. Thanks! 😊
+
+
+2
+ likes
+Reply
+ 
+perpetual_education profile image
+perpetual . education
+•
+Oct 16 '19
+
+It's pretty heavy-handed. If you want to get more granular - check out this type of selector.
+article {
+  h1 + p {
+    margin-top: 20px;
+ } 
+}
+
+1
+ like
+Reply
+ 
+beumsk profile image
+Rémy Beumier
+•
+Oct 8 '19
+
+Thanks for the article Andy, I'll definitely create mine based on this one. :)
+
+One question though: Why don't you use more reset on buttons?
+
+
+3
+ likes
+Reply
+ 
+toanlc0912 profile image
+Toàn Lư
+•
+Oct 8 '19
+
+Thank you very much for the resetCSS and the breakdown. Will use it for the next project.
+
+
+2
+ likes
+Reply
+ 
+anthonycook profile image
+Anthony Cook
+•
+Oct 8 '19 • Edited on Oct 8
+
+Have you considered using rem instead of em on this part? (so the margin is relative to document font size)
+article > * + * {
+  margin-top: 1em;
+}
+
+1
+ like
+Reply
+ 
+hankchizljaw profile image
+Andy Bell
+•
+Oct 8 '19
+
+em is relative to the element in question’s size, which I’ve found generates a nice, natural rhythm. I went into more detail using rem units in this article, last year,
+
+
+1
+ like
+Reply
+ 
+joaorr3 profile image
+João Ribeiro
+•
+Oct 2 '19
+
+Thank you!
+
+
+1
+ like
+Reply
+ 
+graphkgrondin profile image
+Kenjee Grondin
+•
+Dec 12 '19
+
+Thanks! I was looking for a new reset.css! :-)
+
+
+1
+ like
+Reply
+ 
+bayuangora profile image
+Bayu Angora
+•
+Oct 8 '19
+
+What if text-rendering: optimizespeed placed to html part rather than body part?
+
+
+1
+ like
+Reply
+ 
+hankchizljaw profile image
+Andy Bell
+•
+Oct 8 '19
+
+You could do that if you want, sure!
+
+
+2
+ likes
+Reply
+ 
+haroenv profile image
+Haroen Viaene
+•
+Oct 3 '19
+
+I prefer to keep the default margin / padding on elements, since it requires less CSS to set this back to a real value and I can't e.g. forget to style an element which is added dynamically
+
+
+1
+ like
+Reply
+ 
+weakish profile image
+Jang Rush
+•
+Oct 15 '19
+
+Hi, I'd like to translate this article to Chinese, and publish the translation at nextfe.com Can you give me the permission to translate it?
+
+
+1
+ like
+Reply
+ 
+perpetual_education profile image
+perpetual . education
+•
+Oct 16 '19
+
+We still find places where a 3rd party plugin will use content-box - and that the inherit is still a win: paulirish.com/2012/box-sizing-bord... - Some of this other stuff seems like they have edge cases. We'll play with it a bit and see if we can break it.
+
+
+1
+ like
+Reply
+View full discussion (52 comments)
+Code of Conduct • Report abuse
+Read next
+elianvancutsem profile image
+What does TailwindCSS 2.1 improve?
+Elian Van Cutsem - Apr 5
+
+lindelof profile image
+A lot of useful and wonderful landing page templates
+lindelof - Apr 2
+
+devggaurav profile image
+6 amazing free tools that will save you some time when u are building websites. (Especially for 'non-designer' developers)
+Gaurav - Mar 19
+
+ykadosh profile image
+How I Made This Realistic Red Switch (Pure CSS)
+Yoav Kadosh - Mar 22
+
+Andy Bell profile image
+Andy Bell
+Freelance web designer ➤ CSS stuff ➤ Curates http://piccalil.li ➤ Co-author of https://every-layout.dev ➤ Writing https://cssfromscratch.com ➤ Music I like: http://tracks.hankchizljaw.com
+Follow
+LOCATION
+UK
+JOINED
+Mar 26, 2018
+More from Andy Bell
+What do you find the most difficult with CSS?
+#discuss #css #beginners
+Create a semantic “breakout” button to make an entire element clickable
+#css #a11y #html
+Bite Sized Basics: Box Sizing
+#tutorial #css #beginners
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+Home Listings Podcasts Videos Tags Code of Conduct FAQ DEV Shop Sponsors About Privacy Policy Terms of use Contact Sign In/Up
+    
+DEV Community – A constructive and inclusive social network for software developers. With you every step of your journey.
+
+Built on Forem — the open source software that powers DEV and other inclusive communities.
+
+Made with love and Ruby on Rails. DEV Community © 2016 - 2021.
+
+Sloan, the sloth mascot
