@@ -15,15 +15,18 @@
     <!-- Linearicons-->
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 
+    <!--html reset-->
+    <!-- <link rel="stylesheet" type="text/css" href="css/html5reset.css"> -->
+
     <!--favcons-->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <script src="https://kit.fontawesome.com/6dc2e6e9ad.js" crossorigin="anonymous"></script>
 
     <title>Jay Brown</title>
   </head>
-
-  <body class="bg-light" style="display: block;">
-    <div class="container-fluid">
+<header>
+    <a class = "skip" href="#main">Skip to Main Content</a>
+    <div class="container-fluid" style="display: block;">
         <nav class="navbar navbar-expand-lg navbar-light">
           <a href="index.html" class ="navbar-brand text-dark fw-bold fs-4">J. Brown</a>
           <button
@@ -44,13 +47,13 @@
                       <a class="nav-link" aria-current="page" href="index.html">Home</a> 
                   </li>
                   <li class="nav-item"></li>
-                      <a class="nav-link active" aria-current="page" href="about.html">About</a> 
+                      <a class="nav-link active" aria-current="page" href="about.html">About</a>
                   </li>
                   <li class="nav-item"></li>
-                      <a class="nav-link"aria-current="page" href="projects.html">Projects</a> 
+                      <a class="nav-link"aria-current="page" href="projects.html">Projects</a>
                   </li>
                   <li class="nav-item "></li>
-                      <a class="nav-link" aria-current="page" href="booklist.html">Booklist</a> 
+                      <a class="nav-link" aria-current="page" href="booklist.html">Booklist</a>
                   </li>
                   <!-- <li>
                       <a href="#" class="genric-btn primary-border circle" target="_blank">resume</a> 
@@ -58,10 +61,10 @@
               </ul>
           </div>
         </nav>
-    </div> 
+    </div>
         <!--Banner Start-->
         <section>
-            <div class="container-fluid justify-content-center" style="background-color: #8490ff;">
+            <div class="container-fluid justify-content-center" style="background-color: #8490ff" id="banner">
                 <div class="row d-flex align-items-center justify-content-center">
                     <div class="col-lg-12 ">
                     <br>
@@ -77,28 +80,54 @@
                   </nav>
             </div>
         </section>
-
+        <br>
+</header>
+<main id= "main">
         <!--Background Start-->
-        <div class="container section-gap">
+        <div class="container">
             <div class="section-top-border">
-                <div class="row align-items-center justify-content-md-center">
-                    <div class="col-sm-6">
-                        <img class="img-fluid rounded " src="images/linkedin.jpeg" alt="Jay Brown">
-                        <br>
-                        <br>
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-lg-5 col-md-6">
+                        <img class="img-fluid rounded" src="images/linkedin.jpeg" alt="Jay Brown">
                     </div>
-                    <div class="col-lg-12 pt-60">
+                        <br>
+                        <br>
+                    <div class="col-lg-6 col-md-6">
+                        <br>
+                        <h2>Questions?</h2>
+                        <br>
                         <p>
-                            Experienced Technology Fellow with a demonstrated history of working in the higher education industry. 
-                            Skilled in Data Analysis, Mentoring, Python, Java, and Android Development. Strong information technology 
-                            professional pursing a Bachelor of Applied Science - BS focused in Information Science from the University of Michigan - School of Information. 
+                            Whether you have questions or simply want to get a cup of coffee, feel free to reach out!
                         </p>
+                        <a href="#Contact" class="btn btn-outline-primary btn-md">Contact</a>
                     </div>
                 </div>
+                <br>
+                    <div class="col-lg-12 pt-60">
+                        <p>
+                            My aspiration to become a data scientist stems preeminently from my passion for data ethics,
+                            AI, and policy reform across multiple domains. While the design, development, and
+                            implementation of initiatives for justice have always been data-driven, at no point prior have
+                            the tools to narrate the stories of underrepresented populations of people been so accessible. I
+                            believe these stories are critical to structural change at every level. So, it is for these reasons that 
+                            I commit myself to a life of advocacy through technological skills.
+                        </p>
+                        <p>
+                            Last summer, I worked as a researcher at the University of California,
+                            where I explored misinformation and disenfranchisement operations on social media platforms,
+                            with a deep focus on understanding how misinformation influences public opinion. 
+                        </p>
+                        <p>
+                            In 2019, I worked under Dr. Sweeney at Harvard's Data Privacy Lab on multiple projects that
+                            assessed the strength of the HIPPA Privacy Rule and measured voter susceptibility to fraud. For
+                            each project, I developed strategies that leveraged multiple Python scientific libraries and
+                            applied descriptive and inferential statistical methods where required.
+                        </p>
+                    </div>
             </div>
         </div>
-        <hr>
         <!--Form start-->
+        <hr id="Contact" tabindex="-1">
         <section class="contact py-5" id="contact">
             <div class="container-lg py-4">
                 <div class="row justify-content-center">
@@ -184,7 +213,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
   -->
 </body>
-
+</main>
 <!--Footer Start-->
 <footer class="footer border-top py-4">
     <div class = "container-lg">
