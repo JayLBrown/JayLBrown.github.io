@@ -41,6 +41,13 @@ h1, h2, h3, h4, h5, h6 {
   color: #8490ff;
 }
 
+img {
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+
+
 .fa-linkedin-in {
   font-size: 30px;
   width: auto;
@@ -91,7 +98,7 @@ a.skip:hover {
   overflow: visible; 
 }
 
-@media (max-width: 922px) {
+@media (min-width: 622px) {
     .avatar-container {
       width: 100%;
       border: 1px solid #eee;
@@ -117,7 +124,7 @@ a.skip:hover {
   }
 }
 
-@media (max-width: 923px) {
+@media (min-width: 923px) {
   .navbar:not(.top-nav-collapse) {
       background: #fff !important;
   }
@@ -170,6 +177,6 @@ a.skip:hover {
   }
   .container {
     margin: 0 auto;
-    max-width: 1024px;
+    max-width: 1440px;
   }
 }
