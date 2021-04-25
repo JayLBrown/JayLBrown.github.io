@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2em !important;
   margin-bottom: 0;
   margin-top: 0;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .top-nav-collapse, .page-footer {
@@ -41,12 +41,25 @@ h1, h2, h3, h4, h5, h6 {
   color: #8490ff;
 }
 
-img {
+.avatar-container {
+  width: 100%;
+  border: 1px solid #eee;
+}
+.aqua-gradient {
+  height: 240px;
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(233, 242, 233, 0.9878326330532213) 0%, rgba(0, 212, 255, 1) 20%, rgb(15, 4, 113)93%);
+}
+
+.image {
+  margin-top: -150px;
+  width: auto;
+}
+
+.img {
   image-rendering: auto;
   image-rendering: crisp-edges;
   image-rendering: pixelated;
 }
-
 
 .fa-linkedin-in {
   font-size: 30px;
@@ -98,7 +111,16 @@ a.skip:hover {
   overflow: visible; 
 }
 
-@media (min-width: 622px) {
+.card-body{
+  font-size: medium;
+}
+
+#avatar {
+  margin-top: -150px;
+  width: 300px;
+}
+
+@media (max-width: 900px) and (min-width: 622px) {
     .avatar-container {
       width: 100%;
       border: 1px solid #eee;
@@ -107,11 +129,15 @@ a.skip:hover {
       height: 240px;
       background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(233, 242, 233, 0.9878326330532213) 0%, rgba(0, 212, 255, 1) 20%, rgb(15, 4, 113)93%);
     }
+    #avatar {
+      margin-top: -150px;
+      width: 400px;
+    }
     .image {
       margin-top: -150px;
       width: auto;
     }
-    .img-fluid {
+    #projects .img-fluid {
       max-width: 100%;
       height: auto;
       object-fit: cover;
@@ -128,7 +154,7 @@ a.skip:hover {
   .navbar:not(.top-nav-collapse) {
       background: #fff !important;
   }
-  .img-fluid {
+  #projects .img-fluid {
     max-width: 100%;
     height: auto;
     object-fit: cover;
@@ -150,7 +176,102 @@ a.skip:hover {
     }
 }
 
-@media (min-width:1000px)  {
+
+
+@media (max-width:1420px) and  (min-width:1000px)  {
+  .navbar:not(.top-nav-collapse) {
+    background: #fff !important;
+  }
+  .navbar-collapse {
+      overflow-x: visible !important;
+  }
+  .navbar-collapse.in {
+    overflow-y: auto !important;
+  }
+  .collapse.in {
+    display: block !important;
+  }
+  .avatar-container {
+    width: 100%;
+    border: 1px solid #eee;
+  }
+  #avatar {
+    width: 340px;
+  }
+  .image {
+    margin-top: -150px;
+    width: auto;
+  }
+  .aqua-gradient {
+    height: 200px;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(233, 242, 233, 0.9878326330532213) 0%, rgba(0, 212, 255, 1) 20%, rgb(15, 4, 113)93%);
+  }
+  .container {
+    margin: 0 auto;
+    max-width: 1440px;
+
+  }
+  #projects .img-fluid {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  /* #project1{
+    max-width: 100%;
+    height: 300px;
+
+  }
+  #project2{
+    max-width: 100%;
+    height: 300px;
+  } */
+  /* #project3{
+    max-width: 100%;
+    height: 300px;
+    clip: rect(0px,60px,200px,0px);
+  }
+  #project4{
+    max-width: 100%;
+    height: 300px;
+    clip: rect(0px,60px,200px,0px);
+  }
+  #project5{
+    max-width: 100%;
+    height: 300px;
+    clip: rect(0px,60px,200px,0px);
+  }
+  #project5{
+    max-width: 100%;
+    height: 300px;
+    clip: rect(0px,60px,200px,0px);
+  }
+  #project6{
+    max-width: 100%;
+    height: 300px;
+    clip: rect(0px,60px,200px,0px);
+  }
+  #project7{
+    max-width: 100%;
+    height: 300px;
+    clip: rect(0px,60px,200px,0px);
+  }
+  #project8{
+    max-width: 100%;
+    height: 300px;
+    clip: rect(0px,60px,200px,0px);
+  }
+  #project9{
+    max-width: 100%;
+    height: 300px;
+    clip: rect(0px,60px,200px,0px);
+  } */
+}
+
+@media (min-width:1440px)  {
   .navbar:not(.top-nav-collapse) {
     background: #fff !important;
   }
@@ -178,5 +299,70 @@ a.skip:hover {
   .container {
     margin: 0 auto;
     max-width: 1440px;
+
   }
+  /* .img-fluid {
+    max-width: 100%;
+    height: 300px;
+    object-fit: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  } */
+
+
+  /* #project1{
+    max-width: 100%;
+    height: 300px;
+
+  }
+
+  #project2{
+    max-width: 100%;
+    height: 300px;
+  } */
+
+  /* #project3{
+    max-width: 100%;
+    height: 300px;
+    clip: rect(0px,60px,200px,0px);
+  }
+
+  #project4{
+    max-width: 100%;
+    height: 300px;
+    clip: rect(0px,60px,200px,0px);
+  }
+
+  #project5{
+    max-width: 100%;
+    height: 300px;
+    clip: rect(0px,60px,200px,0px);
+  }
+
+  #project5{
+    max-width: 100%;
+    height: 300px;
+    clip: rect(0px,60px,200px,0px);
+  }
+
+  #project6{
+    max-width: 100%;
+    height: auto;
+  }
+  #project7{
+    max-width: 100%;
+    height: 300px;
+    clip: rect(0px,60px,200px,0px);
+  }
+  #project8{
+    max-width: 100%;
+    height: 300px;
+    clip: rect(0px,60px,200px,0px);
+  }
+  #project9{
+    max-width: 100%;
+    height: 300px;
+    clip: rect(0px,60px,200px,0px);
+  } */
 }
